@@ -1,9 +1,4 @@
-function prueba() {
-}
-
 var Hora = function (valorHora) {
-
-    var valor = limpiar(valorHora);
 
     function limpiar(v) {
         if (v) {
@@ -15,6 +10,8 @@ var Hora = function (valorHora) {
             return '00:00';
         }
     }
+
+    var valor = limpiar(valorHora);
 
     return {
         valorHora: function () {
@@ -87,5 +84,5 @@ var Hora = function (valorHora) {
             return false;
         }
 
-    }
-}
+    };
+};
