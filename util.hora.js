@@ -10,8 +10,12 @@ var Hora = function (valorHora) {
             return '00:00';
         }
     }
-
+    
     var valor = limpiar(valorHora);
+    
+    function obtenerValor(entrada){
+            return '00:00';
+        }
 
     return {
         valorHora: function () {
