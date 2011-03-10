@@ -2,7 +2,15 @@ var Hora = function (valorHora) {
 
     function limpiar(v) {
         if (v) {
-            if (v.length == 4) { v = '0' + v; }
+
+            // Verificar si es un objeto o una hora
+            if (typeof v === "object") {
+                v = v.valorCompleto();
+            };
+
+            if (v.length == 4) {
+                v = '0' + v;
+            }
             return v;
 
         }
@@ -10,12 +18,12 @@ var Hora = function (valorHora) {
             return '00:00';
         }
     }
-    
+
     var valor = limpiar(valorHora);
-    
-    function obtenerValor(entrada){
-            return '00:00';
-        }
+
+    function obtenerValor(entrada) {
+        return '00:00';
+    }
 
     return {
         valorHora: function () {
@@ -51,11 +59,11 @@ var Hora = function (valorHora) {
         esMayor: function (nuevaHora) {
             nuevaHora = limpiar(nuevaHora);
 
-            var horasMenor = parseInt(nuevaHora.substring(0, 2),10);
-            var minutosMenor = parseInt(nuevaHora.substring(3, 5),10);
+            var horasMenor = parseInt(nuevaHora.substring(0, 2), 10);
+            var minutosMenor = parseInt(nuevaHora.substring(3, 5), 10);
 
-            var horasMayor = parseInt(valor.substring(0, 2),10);
-            var minutosMayor = parseInt(valor.substring(3, 5),10);
+            var horasMayor = parseInt(valor.substring(0, 2), 10);
+            var minutosMayor = parseInt(valor.substring(3, 5), 10);
 
             if (horasMenor > horasMayor) {
                 return false;
