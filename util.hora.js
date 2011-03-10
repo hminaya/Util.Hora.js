@@ -3,10 +3,10 @@ var Hora = function (valorHora) {
     function limpiar(v) {
         if (v) {
 
-            // Verificar si es un objeto o una hora
+            // Verificar si es un objeto o una hora.
             if (typeof v === "object") {
                 v = v.valorCompleto();
-            };
+            }
 
             if (v.length == 4) {
                 v = '0' + v;
